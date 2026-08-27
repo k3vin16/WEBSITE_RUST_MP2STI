@@ -1,0 +1,696 @@
+/* =============================================================
+   STYLE.CSS — Portofolio Kelompok RUST
+   Tema: NEO BRUTALISM (industrial / oxidized metal)
+   Catatan untuk Maba:
+   - CSS ini sengaja ditulis rapi & bertahap per section.
+   - Baca komentar di setiap bagian sebelum mengubah apa pun.
+   - Tema brutalism = border tebal, warna kontras solid,
+     bayangan "keras" (hard shadow, tanpa blur), dan
+     tidak banyak border-radius / animasi rumit.
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   1. RESET DASAR
+   Menghilangkan margin/padding bawaan browser supaya konsisten
+   di semua halaman.
+------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------
+   2. DESIGN TOKENS (CSS VARIABLES)
+   Semua warna & ukuran utama dikumpulkan di sini.
+   Kalau mau ganti warna tema, cukup ubah di bagian ini saja,
+   TIDAK perlu cari satu-satu di bawah.
+
+   Konsep warna: terinspirasi dari "RUST" = besi berkarat.
+   - clr-rust   : warna utama, oranye-kemerahan seperti karat
+   - clr-amber  : warna kedua, seperti kilau logam teroksidasi
+   - clr-teal   : warna aksen, seperti patina/karat tembaga
+   - clr-fg     : hitam pekat untuk border & teks (ciri khas brutalism)
+   - clr-bg     : putih tulang, seperti kertas industrial
+------------------------------------------------------------- */
+:root {
+  /* Warna */
+  --clr-bg:     #F3EFE6;
+  --clr-fg:     #14100D;
+  --clr-rust:   #C1440E;
+  --clr-amber:  #F2A93B;
+  --clr-teal:   #2F6E63;
+  --clr-white:  #FFFFFF;
+
+  /* Tipografi */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
+  /* Ukuran border & bayangan khas Neo Brutalism */
+  --border-w:   3px;
+  --border-w-lg: 5px;
+  --shadow-x:   6px;
+  --shadow-y:   6px;
+
+  /* Spacing */
+  --gap-sm: 0.75rem;
+  --gap-md: 1.5rem;
+  --gap-lg: 3rem;
+  --max-width: 1100px;
+}
+
+/* -------------------------------------------------------------
+   3. GLOBAL / BASE STYLE
+------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  /* Sedikit tekstur "kertas industrial" pakai gradient tipis */
+  background-image:
+    linear-gradient(90deg, rgba(20,16,13,0.03) 1px, transparent 1px),
+    linear-gradient(rgba(20,16,13,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Garis pembatas antar section, sengaja tebal & tegas */
+.section-divider {
+  border: none;
+  border-top: var(--border-w) solid var(--clr-fg);
+  margin: var(--gap-lg) 0;
+}
+
+/* -------------------------------------------------------------
+   4. UTILITAS: TOMBOL (BUTTON) BERGAYA NEO BRUTALISM
+   Ciri khas: border tebal + bayangan kotak keras.
+   Saat hover, tombol "naik" dan bayangan membesar dikit.
+------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.9rem 1.75rem;
+  background-color: var(--clr-amber);
+  color: var(--clr-fg);
+  border: var(--border-w) solid var(--clr-fg);
+  box-shadow: var(--shadow-x) var(--shadow-y) 0 var(--clr-fg);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: calc(var(--shadow-x) + 3px) calc(var(--shadow-y) + 3px) 0 var(--clr-fg);
+}
+
+.btn:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 var(--clr-fg);
+}
+
+.btn--rust {
+  background-color: var(--clr-rust);
+  color: var(--clr-white);
+}
+
+.btn--outline {
+  background-color: var(--clr-bg);
+}
+
+/* -------------------------------------------------------------
+   5. NAVBAR
+   Berlaku untuk index.html, portfolio.html, contact.html.
+   Logo + 3 link navigasi + tombol hamburger (khusus mobile).
+------------------------------------------------------------- */
+.navbar {
+  background-color: var(--clr-white);
+  border-bottom: var(--border-w-lg) solid var(--clr-fg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.navbar__logo {
+  width: 44px;
+  height: 44px;
+  border: var(--border-w) solid var(--clr-fg);
+  object-fit: cover;
+  background-color: var(--clr-rust);
+}
+
+.navbar__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Daftar link navigasi (desktop: horizontal) */
+.navbar__links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.navbar__links a {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: var(--border-w) solid transparent;
+}
+
+.navbar__links a:hover,
+.navbar__links a.is-active {
+  border-color: var(--clr-fg);
+  background-color: var(--clr-amber);
+  box-shadow: 4px 4px 0 var(--clr-fg);
+}
+
+/* Tombol hamburger, disembunyikan di desktop, dimunculkan di mobile
+   lewat media query di bagian bawah file ini */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar__toggle span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--clr-fg);
+}
+
+/* -------------------------------------------------------------
+   6. HERO SECTION (khusus index.html)
+   Sesuai ketentuan: display:flex; justify-content:space-between;
+   Kiri = teks (judul, deskripsi, tombol), Kanan = foto 9:16.
+------------------------------------------------------------- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-lg);
+  padding: var(--gap-lg) 0;
+}
+
+.hero__text {
+  flex: 1 1 480px;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background-color: var(--clr-teal);
+  color: var(--clr-white);
+  padding: 0.3rem 0.75rem;
+  border: var(--border-w) solid var(--clr-fg);
+  margin-bottom: 1rem;
+  transform: rotate(-2deg);
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 1rem;
+}
+
+.hero__title span {
+  color: var(--clr-rust);
+  -webkit-text-stroke: 2px var(--clr-fg);
+}
+
+.hero__desc {
+  font-size: 1.1rem;
+  max-width: 55ch;
+  margin-bottom: 1.75rem;
+}
+
+.hero__photo-wrap {
+  flex: 0 0 auto;
+}
+
+/* Placeholder foto kelompok rasio 9:16 */
+.hero__photo {
+  width: 280px;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border: var(--border-w-lg) solid var(--clr-fg);
+  box-shadow: 10px 10px 0 var(--clr-rust);
+}
+
+/* -------------------------------------------------------------
+   7. SECTION TITLE (dipakai berulang di semua halaman)
+------------------------------------------------------------- */
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  max-width: 60ch;
+  margin-bottom: var(--gap-md);
+  color: #3a352f;
+}
+
+/* -------------------------------------------------------------
+   8. GRID / LIST KARTU (CARD)
+   Ketentuan: Desktop = horizontal (row), Mobile = vertical (column).
+   Default (desktop): pakai flex row + wrap.
+------------------------------------------------------------- */
+.card-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--gap-md);
+}
+
+/* Kartu dasar bergaya Neo Brutalism:
+   - background putih
+   - border tebal hitam
+   - box-shadow keras (tanpa blur) memakai warna aksen
+   - efek hover "terangkat" */
+.card {
+  background-color: var(--clr-white);
+  border: var(--border-w) solid var(--clr-fg);
+  box-shadow: var(--shadow-x) var(--shadow-y) 0 var(--clr-fg);
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: calc(var(--shadow-x) + 4px) calc(var(--shadow-y) + 4px) 0 var(--clr-fg);
+}
+
+.card__media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: var(--border-w) solid var(--clr-fg);
+  background-color: var(--clr-bg);
+}
+
+.card__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+
+.card__tag {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  background-color: var(--clr-amber);
+  border: 2px solid var(--clr-fg);
+}
+
+.card__title {
+  font-size: 1.15rem;
+}
+
+.card__desc {
+  font-size: 0.95rem;
+  color: #3a352f;
+  flex-grow: 1;
+}
+
+.card__footer {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* Kartu placeholder kosong (untuk anggota yang belum diisi Maba) */
+.card--empty {
+  opacity: 0.55;
+  border-style: dashed;
+  box-shadow: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card--empty .card__body {
+  align-items: center;
+}
+
+/* -------------------------------------------------------------
+   9. KARTU ANGGOTA (contact.html)
+------------------------------------------------------------- */
+.member-card__avatar {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-bottom: var(--border-w) solid var(--clr-fg);
+  background-color: var(--clr-bg);
+}
+
+.member-card__name {
+  font-size: 1.2rem;
+}
+
+.member-card__role {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--clr-rust);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Baris ikon sosial media */
+.socials {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.socials a {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--clr-fg);
+  background-color: var(--clr-bg);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.socials a:hover {
+  background-color: var(--clr-amber);
+  transform: translate(-2px, -2px);
+}
+
+.socials svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--clr-fg);
+}
+
+/* -------------------------------------------------------------
+   10. SERTIFIKAT PER ANGGOTA (tab + grid sertifikat)
+   Dipakai di portfolio.html pada section "Sertifikat Anggota".
+------------------------------------------------------------- */
+
+/* Baris tombol tab (1 tombol = 1 anggota) */
+.member-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: var(--gap-md);
+}
+
+.tab-btn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.1rem;
+  background-color: var(--clr-white);
+  color: var(--clr-fg);
+  border: var(--border-w) solid var(--clr-fg);
+  box-shadow: 4px 4px 0 var(--clr-fg);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.tab-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--clr-fg);
+}
+
+/* Tab yang sedang aktif (diberi lewat script.js) */
+.tab-btn.is-active {
+  background-color: var(--clr-rust);
+  color: var(--clr-white);
+}
+
+/* Panel isi tiap anggota. Disembunyikan secara default,
+   hanya panel dengan class "is-active" yang ditampilkan. */
+.member-panel {
+  display: none;
+}
+
+.member-panel.is-active {
+  display: block;
+}
+
+/* Grid kartu sertifikat di dalam 1 panel anggota.
+   Sama seperti .card-row: desktop row, mobile column
+   (lihat media query mobile di bagian bawah file ini). */
+.cert-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-md);
+}
+
+.cert-card {
+  background-color: var(--clr-white);
+  border: var(--border-w) solid var(--clr-fg);
+  box-shadow: var(--shadow-x) var(--shadow-y) 0 var(--clr-fg);
+  flex: 1 1 200px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cert-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: calc(var(--shadow-x) + 4px) calc(var(--shadow-y) + 4px) 0 var(--clr-fg);
+}
+
+.cert-card__thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: var(--border-w) solid var(--clr-fg);
+  background-color: var(--clr-bg);
+}
+
+.cert-card__body {
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+
+.cert-card__title {
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+/* Kartu sertifikat kosong (belum diisi Maba) */
+.cert-card--empty {
+  opacity: 0.55;
+  border-style: dashed;
+  box-shadow: none;
+}
+
+/* -------------------------------------------------------------
+   11. MODAL DETAIL SERTIFIKAT
+   Muncul di tengah layar saat tombol "Lihat Detail" diklik.
+   Disembunyikan secara default lewat display:none, lalu
+   dimunculkan oleh script.js dengan menambah class "is-open".
+------------------------------------------------------------- */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 16, 13, 0.75);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 200;
+}
+
+.modal-overlay.is-open {
+  display: flex;
+}
+
+.modal-box {
+  background-color: var(--clr-white);
+  border: var(--border-w-lg) solid var(--clr-fg);
+  box-shadow: 10px 10px 0 var(--clr-rust);
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 36px;
+  height: 36px;
+  background-color: var(--clr-amber);
+  border: var(--border-w) solid var(--clr-fg);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-box__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: var(--border-w) solid var(--clr-fg);
+  background-color: var(--clr-bg);
+}
+
+.modal-box__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Mengunci scroll halaman utama saat modal terbuka */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------------
+   12. FOOTER
+------------------------------------------------------------- */
+.footer {
+  border-top: var(--border-w-lg) solid var(--clr-fg);
+  background-color: var(--clr-fg);
+  color: var(--clr-bg);
+  margin-top: var(--gap-lg);
+  padding: 1.75rem 0;
+  text-align: center;
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+}
+
+/* -------------------------------------------------------------
+   11. RESPONSIVE / MEDIA QUERY (MOBILE < 768px)
+   Sesuai ketentuan:
+   - Card row jadi vertical (column) di mobile.
+   - Navbar jadi hamburger menu di mobile.
+   - Hero section jadi ditumpuk vertikal.
+------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Hero: dari row jadi column, foto pindah ke bawah teks */
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero__photo-wrap {
+    align-self: center;
+  }
+
+  /* Card row: dari horizontal jadi vertical */
+  .card-row {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 auto;
+  }
+
+  /* Grid sertifikat anggota: dari horizontal jadi vertical */
+  .cert-grid {
+    flex-direction: column;
+  }
+
+  .cert-card {
+    max-width: none;
+  }
+
+  /* Navbar: sembunyikan link, tampilkan tombol hamburger */
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--clr-white);
+    border-bottom: var(--border-w) solid var(--clr-fg);
+    padding: 0.5rem 1.5rem 1rem;
+  }
+
+  /* Class ".is-open" ditambahkan/dihapus lewat script.js */
+  .navbar__links.is-open {
+    display: flex;
+  }
+
+  .navbar__inner {
+    position: relative;
+  }
+}

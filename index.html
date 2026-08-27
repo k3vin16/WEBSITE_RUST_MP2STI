@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RUST — Home</title>
+
+  <!-- Font: Space Grotesk (display/judul) & Barlow (body/teks) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR (sama persis di index.html, portfolio.html, contact.html)
+       Kalau mengubah navbar, ubah juga di 2 file HTML lainnya ya!
+  ============================================================= -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand">
+        <!-- Placeholder logo 828x828, ganti src ke assets/logo.png -->
+        <img src="assets/LOGO RUST.webp" alt="Logo RUST" class="navbar__logo" />
+        <span class="navbar__title">RUST</span>
+      </a>
+
+      <!-- Tombol hamburger, hanya tampil di mobile (lihat style.css) -->
+      <button class="navbar__toggle" aria-label="Buka menu navigasi">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="navbar__links">
+        <li><a href="index.html" class="is-active">Home</a></li>
+        <li><a href="porto.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION
+       Ketentuan: display:flex; justify-content:space-between;
+  ============================================================= -->
+  <main class="container">
+    <section class="hero">
+
+      <!-- Kolom kiri: teks -->
+      <div class="hero__text">
+        <span class="hero__eyebrow">Kelompok Portofolio</span>
+        <h1 class="hero__title">Kami adalah <span>RUST</span></h1>
+
+        <p class="hero__desc">
+          RUST adalah kelompok mahasiswa D3 Teknologi Informasi Madiun yang
+          membangun proyek-proyek nyata sambil belajar Machine Learning,
+          UI/UX, dan pengembangan web. Kenali kami lebih dekat lewat
+          proyek dan sertifikat yang sudah kami kumpulkan.
+        </p>
+
+        <a href="portfolio.html" class="btn btn--rust">Lihat Portofolio Kami</a>
+      </div>
+
+      <!-- Kolom kanan: foto kelompok, placeholder rasio 9:16 -->
+      <div class="hero__photo-wrap">
+        <img
+          src="assets/aku.PNG"
+          alt="Foto Kelompok RUST"
+          class="hero__photo"
+        />
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ============================================================
+         DESKRIPSI SINGKAT ANGGOTA
+         2 anggota sudah pasti, 5 lainnya masih placeholder.
+         Data lengkap ada di contact.html.
+    ============================================================= -->
+    <section>
+      <h2 class="section-title">Tentang Anggota Kami</h2>
+      <p class="section-subtitle">
+        RUST beranggotakan 7 mahasiswa. Berikut 2 anggota yang sudah
+        mengisi profilnya — 5 anggota lainnya masih menyusul.
+      </p>
+
+      <div class="card-row">
+
+        <!-- Anggota 1: Hafidh -->
+        <article class="card">
+          <div class="card__body">
+            <span class="card__tag">Anggota 1</span>
+            <h3 class="card__title">Rifqi Dzaky Ramadhan</h3>
+            <p class="card__desc">
+              Mahasiswa D3 Teknologi Informasi Politeknik Negeri Madiun, kelas 1A. 
+            </p>
+          </div>
+        </article>
+
+        <!-- Anggota 2: Michelle -->
+        <article class="card">
+          <div class="card__body">
+            <span class="card__tag">Anggota 2</span>
+            <h3 class="card__title">Kevin Ardyan Syah</h3>
+            <p class="card__desc">
+              Mahasiswa D3 Teknologi Informasi Politeknik Negeri Madiun, kelas 1B.
+            </p>
+          </div>
+        </article>
+
+        <!-- Anggota 3–7: masih kosong, menunggu diisi oleh Maba -->
+        <article class="card card--empty">
+          <div class="card__body">
+            <span class="card__tag">Anggota 3–7</span>
+            <h3 class="card__title">Belum Diisi</h3>
+            <p class="card__desc">
+              5 slot anggota lainnya masih kosong. Isi data lengkapnya
+              di halaman <strong>contact.html</strong>.
+            </p>
+          </div>
+        </article>
+
+        <!-- Anggota 3–7: masih kosong, menunggu diisi oleh Maba -->
+        <article class="card card--empty">
+          <div class="card__body">
+            <span class="card__tag">Anggota 3–7</span>
+            <h3 class="card__title">Belum Diisi</h3>
+            <p class="card__desc">
+              5 slot anggota lainnya masih kosong. Isi data lengkapnya
+              di halaman <strong>contact.html</strong>.
+            </p>
+          </div>
+        </article>
+
+        <!-- Anggota 3–7: masih kosong, menunggu diisi oleh Maba -->
+        <article class="card card--empty">
+          <div class="card__body">
+            <span class="card__tag">Anggota 3–7</span>
+            <h3 class="card__title">Belum Diisi</h3>
+            <p class="card__desc">
+              5 slot anggota lainnya masih kosong. Isi data lengkapnya
+              di halaman <strong>contact.html</strong>.
+            </p>
+          </div>
+        </article>
+
+        <!-- Anggota 3–7: masih kosong, menunggu diisi oleh Maba -->
+        <article class="card card--empty">
+          <div class="card__body">
+            <span class="card__tag">Anggota 3–7</span>
+            <h3 class="card__title">Belum Diisi</h3>
+            <p class="card__desc">
+              5 slot anggota lainnya masih kosong. Isi data lengkapnya
+              di halaman <strong>contact.html</strong>.
+            </p>
+          </div>
+        </article>
+
+        <!-- Anggota 3–7: masih kosong, menunggu diisi oleh Maba -->
+        <article class="card card--empty">
+          <div class="card__body">
+            <span class="card__tag">Anggota 3–7</span>
+            <h3 class="card__title">Belum Diisi</h3>
+            <p class="card__desc">
+              5 slot anggota lainnya masih kosong. Isi data lengkapnya
+              di halaman <strong>contact.html</strong>.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================= -->
+  <footer class="footer">
+    <p>&copy; 2026 Kelompok RUST — D3 Teknologi Informasi Madiun</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

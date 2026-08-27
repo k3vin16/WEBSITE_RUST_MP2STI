@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RUST — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR (sama seperti di index.html, hanya link "Portfolio" yang aktif) -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand">
+        <img src="https://placehold.co/828x828" alt="Logo RUST" class="navbar__logo" />
+        <span class="navbar__title">RUST</span>
+      </a>
+
+      <button class="navbar__toggle" aria-label="Buka menu navigasi">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="navbar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html" class="is-active">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============================================================
+         SECTION: PROJECT
+    ============================================================= -->
+    <section>
+      <h1 class="section-title">Dokumentasi</h1>
+      <p class="section-subtitle">
+        Kumpulan Dokumentasi Kelompok Kami.
+      </p>
+
+      <div class="card-row">
+
+        <article class="card">
+          <img
+            src="https://placehold.co/400x300"
+            alt="Contoh tampilan Project 1"
+            class="card__media"
+          />
+          <div class="card__body">
+            <span class="card__tag">Day 1 MPP</span>
+            <h3 class="card__title">Dokumentasi Day 1 MPP</h3>
+            <p class="card__desc">
+              Dokumentasi kegiatan hari pertama MPP (Masa Pengenalan Profram Studi)
+              D3 Teknologi Informasi Madiun, termasuk perkenalan anggota
+              kelompok RUST dan pembagian tugas awal.
+            </p>
+            <div class="card__footer">
+              <a href="#" class="btn btn--outline">Lihat Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="assets/foto kelompok.JPEG"
+            alt="Contoh tampilan Project 1"
+            class="card__media"
+          />
+          <div class="card__body">
+            <span class="card__tag">Day 1 MPP</span>
+            <h3 class="card__title">Dokumentasi Day 1 MPP</h3>
+            <p class="card__desc">
+              Dokumentasi kegiatan hari pertama MPP (Masa Pengenalan Profram Studi)
+              D3 Teknologi Informasi Madiun, termasuk perkenalan anggota
+              kelompok RUST dan pembagian tugas awal.
+            </p>
+            <div class="card__footer">
+              <a href="#" class="btn btn--outline">Lihat Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://placehold.co/400x300"
+            alt="Contoh tampilan Project 1"
+            class="card__media"
+          />
+          <div class="card__body">
+            <span class="card__tag">Day 1 MPP</span>
+            <h3 class="card__title">Dokumentasi Day 1 MPP</h3>
+            <p class="card__desc">
+              Dokumentasi kegiatan hari pertama MPP (Masa Pengenalan Profram Studi)
+              D3 Teknologi Informasi Madiun, termasuk perkenalan anggota
+              kelompok RUST dan pembagian tugas awal.
+            </p>
+            <div class="card__footer">
+              <a href="#" class="btn btn--outline">Lihat Detail</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ============================================================
+         SECTION: SERTIFIKAT PER ANGGOTA
+         Setiap anggota punya "tab" sendiri, isinya 6 slot sertifikat. Klik "Lihat Detail" pada satu sertifikat akan
+         membuka jendela (modal) yang menampilkan sertifikat itu
+         lebih besar dan lebih jelas.
+    ============================================================= -->
+    <section>
+      <h2 class="section-title">Sertifikat Anggota</h2>
+      <p class="section-subtitle">
+        Klik nama anggota untuk melihat 6 sertifikat Dicoding miliknya.
+        Klik "Lihat Detail" pada tiap sertifikat untuk melihat versi
+        lebih besar dan keterangannya.
+      </p>
+
+      <div class="member-tabs">
+        <button type="button" class="tab-btn is-active" data-target="member-1">Anggota 1</button>
+        <button type="button" class="tab-btn" data-target="member-2">Anggota 2</button>
+        <button type="button" class="tab-btn" data-target="member-3">Anggota 3</button>
+        <button type="button" class="tab-btn" data-target="member-4">Anggota 4</button>
+        <button type="button" class="tab-btn" data-target="member-5">Anggota 5</button>
+        <button type="button" class="tab-btn" data-target="member-6">Anggota 6</button>
+        <button type="button" class="tab-btn" data-target="member-7">Anggota 7</button>
+      </div>
+
+      <!-- ============================================================
+           PANEL 1 — Anggota 1 (contoh sudah terisi 6 sertifikat)
+           Panel dengan class "is-active" adalah yang tampil pertama
+           kali halaman dibuka. Class ini juga yang dipindah-pindah
+           oleh script.js saat tab diklik.
+      ============================================================= -->
+      <div class="member-panel is-active" id="member-1">
+        <div class="cert-grid">
+
+          <!--
+            =====================================================================
+            COPY BAGIAN INI UNTUK MENAMBAH SERTIFIKAT (6 slot per anggota)
+            Cara pakai untuk Maba:
+            1. Copy 1 blok <article class="cert-card"> ... </article>.
+            2. Ganti ke-4 atribut data-cert-* — inilah yang ditampilkan
+               di jendela modal saat tombol "Lihat Detail" diklik:
+                 - data-cert-title  -> judul sertifikat
+                 - data-cert-issuer -> nama penyelenggara (mis. Dicoding)
+                 - data-cert-desc   -> deskripsi singkat
+                 - data-cert-img    -> path gambar sertifikat resolusi besar
+            3. Ganti juga src, alt pada <img class="cert-card__thumb">
+               (ini gambar thumbnail kecil yang tampil di grid).
+            4. TIDAK perlu mengubah script.js — logika modal otomatis
+               membaca atribut data-cert-* dari kartu yang diklik.
+            =====================================================================
+          -->
+          <article
+            class="cert-card"
+            data-cert-title="Belajar Dasar Machine Learning"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat kelulusan pelatihan pengantar Machine Learning, mencakup konsep dasar data, model, dan evaluasi."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img
+              src="https://placehold.co/300x220"
+              alt="Sertifikat Belajar Dasar Machine Learning"
+              class="cert-card__thumb"
+            />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Belajar Dasar Machine Learning</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <!-- ===================== BATAS COPY SERTIFIKAT ===================== -->
+
+          <article
+            class="cert-card"
+            data-cert-title="Machine Learning Terapan untuk Pemula"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat penerapan Machine Learning pada studi kasus sederhana menggunakan Python."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Machine Learning Terapan untuk Pemula" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Machine Learning Terapan untuk Pemula</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+          <article
+            class="cert-card"
+            data-cert-title="Belajar Fundamental Deep Learning"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat pemahaman dasar jaringan saraf tiruan (neural network) dan arsitekturnya."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belajar Fundamental Deep Learning" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Belajar Fundamental Deep Learning</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+          <article
+            class="cert-card"
+            data-cert-title="Analisis Data dengan Python"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat kemampuan mengolah dan memvisualisasikan data menggunakan Python."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Analisis Data dengan Python" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Analisis Data dengan Python</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+          <article
+            class="cert-card"
+            data-cert-title="Klasifikasi Data dengan Algoritma Klasik"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat penguasaan algoritma klasifikasi seperti KNN, Decision Tree, dan Naive Bayes."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Klasifikasi Data dengan Algoritma Klasik" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Klasifikasi Data dengan Algoritma Klasik</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+          <article
+            class="cert-card"
+            data-cert-title="Machine Learning untuk Pemula: Regresi & Klasifikasi"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat penguasaan konsep regresi dan klasifikasi sebagai dasar pemodelan Machine Learning."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Machine Learning untuk Pemula: Regresi dan Klasifikasi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">ML untuk Pemula: Regresi &amp; Klasifikasi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+           PANEL 2 — Anggota 2 (contoh sudah terisi 6 sertifikat)
+      ============================================================= -->
+      <div class="member-panel" id="member-2">
+        <div class="cert-grid">
+
+          <article
+            class="cert-card"
+            data-cert-title="Belajar Dasar UX Design"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat pemahaman proses dasar UX design, mulai dari riset hingga wireframing."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belajar Dasar UX Design" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Belajar Dasar UX Design</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+          <article
+            class="cert-card"
+            data-cert-title="Belajar Prinsip Utama Desain Visual UI"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat penguasaan prinsip layout, warna, dan tipografi dalam desain antarmuka."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belajar Prinsip Utama Desain Visual UI" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Prinsip Utama Desain Visual UI</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+          <article
+            class="cert-card"
+            data-cert-title="Membuat Prototipe untuk UI/UX"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat kemampuan membuat prototipe interaktif untuk pengujian desain aplikasi."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Membuat Prototipe untuk UI/UX" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Membuat Prototipe untuk UI/UX</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+          <article
+            class="cert-card"
+            data-cert-title="Dasar UX Research"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat pemahaman metode riset pengguna seperti wawancara dan usability testing."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Dasar UX Research" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Dasar UX Research</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+          <article
+            class="cert-card"
+            data-cert-title="Membangun Design System Produk Digital"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat kemampuan menyusun sistem desain (komponen, token, guideline) yang konsisten."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Membangun Design System Produk Digital" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Membangun Design System Produk Digital</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+          <article
+            class="cert-card"
+            data-cert-title="Dasar Interaksi Manusia dan Komputer"
+            data-cert-issuer="Dicoding"
+            data-cert-desc="Sertifikat pemahaman prinsip interaksi manusia-komputer dalam merancang produk digital."
+            data-cert-img="https://placehold.co/600x450"
+          >
+            <img src="https://placehold.co/300x220" alt="Sertifikat Dasar Interaksi Manusia dan Komputer" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Dasar Interaksi Manusia &amp; Komputer</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+
+      <!-- PANEL 3 — ANGGOTA 3 (placeholder kosong, 6 slot) -->
+      <div class="member-panel" id="member-3">
+        <div class="cert-grid">
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 3 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 1 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 3 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 2 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 3 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 3 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 3 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 4 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 3 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 5 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 3 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 6 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+        </div>
+      </div>
+      <!-- ===================== BATAS COPY PANEL ANGGOTA ===================== -->
+
+      <!-- PANEL 4 — ANGGOTA 4 (placeholder kosong, 6 slot) -->
+      <div class="member-panel" id="member-4">
+        <div class="cert-grid">
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 4 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 1 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 4 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 2 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 4 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 3 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 4 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 4 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 4 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 5 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 4 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 6 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- PANEL 5 — ANGGOTA 5 (placeholder kosong, 6 slot) -->
+      <div class="member-panel" id="member-5">
+        <div class="cert-grid">
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 5 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 1 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 5 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 2 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 5 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 3 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 5 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 4 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 5 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 5 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 5 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 6 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- PANEL 6 — ANGGOTA 6 (placeholder kosong, 6 slot) -->
+      <div class="member-panel" id="member-6">
+        <div class="cert-grid">
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 6 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 1 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 6 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 2 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 6 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 3 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 6 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 4 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 6 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 5 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 6 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 6 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- PANEL 7 — ANGGOTA 7 (placeholder kosong, 6 slot) -->
+      <div class="member-panel" id="member-7">
+        <div class="cert-grid">
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 7 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 1 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 7 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 2 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 7 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 3 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 7 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 4 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 7 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 5 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+          <article class="cert-card cert-card--empty" data-cert-title="Sertifikat Belum Diisi" data-cert-issuer="Dicoding" data-cert-desc="Sertifikat anggota 7 belum diisi." data-cert-img="https://placehold.co/600x450">
+            <img src="https://placehold.co/300x220" alt="Sertifikat Belum Diisi" class="cert-card__thumb" />
+            <div class="cert-card__body">
+              <h4 class="cert-card__title">Sertifikat 6 — Belum Diisi</h4>
+              <button type="button" class="btn btn--outline cert-card__detail-btn">Lihat Detail</button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ============================================================
+       MODAL DETAIL SERTIFIKAT
+       Hanya SATU modal untuk seluruh halaman. Isinya diganti-ganti
+       secara dinamis oleh script.js sesuai sertifikat yang diklik.
+       Jangan copy modal ini — cukup 1 saja per halaman.
+  ============================================================= -->
+  <div class="modal-overlay" id="certModal">
+    <div class="modal-box">
+      <button type="button" class="modal-close" id="certModalClose" aria-label="Tutup detail sertifikat">&times;</button>
+      <img class="modal-box__img" id="certModalImg" src="" alt="" />
+      <div class="modal-box__body">
+        <span class="card__tag" id="certModalIssuer"></span>
+        <h3 id="certModalTitle"></h3>
+        <p id="certModalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Kelompok RUST — D3 Teknologi Informasi Madiun</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
