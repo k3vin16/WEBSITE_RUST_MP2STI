@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var certModalDesc     = document.getElementById('certModalDesc');
   var certModalClose    = document.getElementById('certModalClose');
   var certDetailButtons = document.querySelectorAll('.cert-card__detail-btn');
+  var docDetailButtons  = document.querySelectorAll('.doc-detail-btn');
 
   // Fungsi untuk membuka modal dan mengisi kontennya
   function openCertModal(card) {
@@ -98,19 +99,38 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add('no-scroll'); // kunci scroll di belakang modal
   }
 
+  // Membuka modal yang sama untuk kartu dokumentasi.
+  function openDocModal(card) {
+    certModalImg.src = card.getAttribute('data-doc-img');
+    certModalImg.alt = card.getAttribute('data-doc-title');
+    certModalIssuer.textContent = card.getAttribute('data-doc-tag');
+    certModalTitle.textContent = card.getAttribute('data-doc-title');
+    certModalDesc.textContent = card.getAttribute('data-doc-desc');
+
+    certModal.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+  }
+
   // Fungsi untuk menutup modal
   function closeCertModal() {
     certModal.classList.remove('is-open');
     document.body.classList.remove('no-scroll');
   }
 
-  if (certModal && certDetailButtons.length) {
+  if (certModal && certModalClose) {
 
     // Pasang event klik ke SEMUA tombol "Lihat Detail"
     certDetailButtons.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var card = btn.closest('.cert-card');
         if (card) openCertModal(card);
+      });
+    });
+
+    docDetailButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = btn.closest('.card');
+        if (card) openDocModal(card);
       });
     });
 
